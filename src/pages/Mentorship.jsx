@@ -8,6 +8,13 @@ import CTA from "../components/mentorship/CTA";
 import "./mentorship.css";
 
 export default function Mentorship() {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -21,8 +28,8 @@ export default function Mentorship() {
             </p>
 
             <div className="hero-actions">
-              <a href="#mentors" className="btn primary">Find a Mentor</a>
-              <a href="#how" className="btn ghost">How it Works</a>
+              <button onClick={() => scrollToSection('mentors')} className="btn primary">Find a Mentor</button>
+              <button onClick={() => scrollToSection('how')} className="btn ghost">How it Works</button>
             </div>
 
             <ul className="hero-highlights">
@@ -34,7 +41,7 @@ export default function Mentorship() {
 
           <div className="hero-right" aria-hidden>
             <div className="hero-card">
-              <img src="/assets/mentor-hero.jpg" alt="Mentorship" />
+              <img src="/assets/hero.jpg" alt="Mentorship" />
             </div>
           </div>
         </header>

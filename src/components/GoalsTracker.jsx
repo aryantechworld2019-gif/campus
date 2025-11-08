@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const goals = [
   { title: "Complete 200 Challenges", current: 142, target: 200, color: "#2563eb", status: "Overdue" },
@@ -7,6 +7,16 @@ const goals = [
 ];
 
 export default function GoalsTracker() {
+  const handleSetNewGoal = () => {
+    // Can be enhanced with a modal form to create new goals
+    const goalTitle = prompt("Enter your new goal:");
+    if (goalTitle) {
+      console.log(`New goal created: ${goalTitle}`);
+      alert(`Goal "${goalTitle}" has been added to your tracker!`);
+      // In production: dispatch to state management or API call
+    }
+  };
+
   return (
     <div className="card mt-18">
       <h4>Goals Tracker</h4>
@@ -34,7 +44,7 @@ export default function GoalsTracker() {
         })}
       </div>
 
-      <button className="small-btn full-width mt-12">Set New Goal</button>
+      <button className="small-btn full-width mt-12" onClick={handleSetNewGoal}>Set New Goal</button>
     </div>
   );
 }

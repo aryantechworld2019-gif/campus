@@ -9,6 +9,19 @@ export default function MentorProfileModal({ mentor, onClose }) {
     return ()=> document.removeEventListener("keydown", onKey);
   }, [onClose]);
 
+  const handleRequestSession = () => {
+    console.log(`Requesting session with ${mentor.name}`);
+    alert(`Session request sent to ${mentor.name}! They'll confirm your booking within 24 hours.`);
+    onClose();
+    // Can be enhanced with actual booking API
+  };
+
+  const handleMessage = () => {
+    console.log(`Opening message to ${mentor.name}`);
+    alert(`Opening chat with ${mentor.name}...`);
+    // Can be enhanced with messaging system or redirect to messaging page
+  };
+
   return (
     <div className="modal-backdrop" role="dialog" aria-modal="true" aria-label={`${mentor.name} profile`}>
       <div className="modal-card">
@@ -25,8 +38,8 @@ export default function MentorProfileModal({ mentor, onClose }) {
               <div><strong>{mentor.skills.length}</strong><span>Skills</span></div>
             </div>
             <div className="modal-contact">
-              <button className="btn primary">Request Session</button>
-              <button className="btn outline">Message</button>
+              <button className="btn primary" onClick={handleRequestSession}>Request Session</button>
+              <button className="btn outline" onClick={handleMessage}>Message</button>
             </div>
           </div>
 
