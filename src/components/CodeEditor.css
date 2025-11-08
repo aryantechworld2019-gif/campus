@@ -1,0 +1,50 @@
+/* src/components/CodeEditor.css */
+
+.code-editor {
+  display: flex;
+  background: #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 400px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.line-numbers {
+  background: #252526;
+  color: #858585;
+  padding: 16px 8px;
+  text-align: right;
+  user-select: none;
+  min-width: 50px;
+  border-right: 1px solid #3e3e42;
+}
+
+.line-number {
+  height: 21px;
+  padding-right: 8px;
+}
+
+.code-textarea {
+  flex: 1;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border: none;
+  outline: none;
+  padding: 16px;
+  resize: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: pre;
+  overflow-wrap: normal;
+  overflow-x: auto;
+  tab-size: 4;
+}
+
+.code-textarea::selection {
+  background: #264f78;
+}
+
+/* Syntax highlighting would be enhanced with a library like Prism or Monaco Editor */
