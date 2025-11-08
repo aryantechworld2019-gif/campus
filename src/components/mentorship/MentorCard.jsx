@@ -1,8 +1,14 @@
 import React from "react";
 
 export default function MentorCard({ mentor, onView }) {
+  const handleSchedule = () => {
+    console.log(`Scheduling session with ${mentor.name}`);
+    alert(`Scheduling a session with ${mentor.name}. You'll receive a confirmation email shortly.`);
+    // Can be enhanced with a calendar modal or booking system
+  };
+
   return (
-    <article className="mentor-card" tabIndex="0">
+    <article className="mentor-card">
       <div className="mentor-avatar">
         <img src={mentor.avatar} alt={`${mentor.name} avatar`} loading="lazy" />
       </div>
@@ -26,7 +32,7 @@ export default function MentorCard({ mentor, onView }) {
 
         <div className="mentor-actions">
           <button className="btn small" onClick={onView}>View profile</button>
-          <button className="btn outline small">Schedule</button>
+          <button className="btn outline small" onClick={handleSchedule}>Schedule</button>
         </div>
       </div>
     </article>
