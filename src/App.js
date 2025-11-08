@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.jsx - add route (replace with this)
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import CodingLab from "./pages/CodingLab";
+import Progress from "./pages/Progress";
+import Mentorship from "./pages/Mentorship";
+import Community from "./pages/Community";
+import Resources from "./pages/Resources";
 
-function App() {
+export default function App(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/coding-lab" element={<CodingLab />} />
+        <Route path="/progress" element={<Progress />} />
+        <Route path="/mentors" element={<Mentorship />} />
+        <Route path="/community" element={<Community />} />
+        <Route path="/resources" element={<Resources />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
